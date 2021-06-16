@@ -1,2 +1,2 @@
 # componente-gslider
- Componente gSlider.js carousel
+Le Scone Project
