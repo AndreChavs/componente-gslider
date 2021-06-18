@@ -1,7 +1,9 @@
 /*Variaveis Principais do Grid.scss*/
 $gutter: 20px;
-$colunas: 12;
+$cols: 12;
+/* o tamnaho do Device é o mesmo que do Container*/
 $l-device:1200px;
+$g-device: 960px;
 $m-device:768px;
 $s-device:480px;
 
@@ -13,29 +15,78 @@ $s-device:480px;
     box-sizing: border-box;
 }
 
-/*MIXIN de BreakPoints*/
-@mixin responsive($size) {
-    @if $size == l {        
-        @media screen and (min-width: $l-device){ 
-            @content;
-        }
-    }   
-    @else if $size == m {   
-        @media screen and (min-width: $m-device) and (max-width: $l-device - 1){
+/*MIXIN de BreakPoints de Responsividade*/
+@mixin device ($size) {
+    @if $size == l {
+        @media screen and (min-width: $l-device){
             @content;
         }
     }
-    @else if $size == s {   
-        @media screen and (max-width: $m-device - 1){
+    @else if $size == g {
+        @media screen and (min-width: $g-device) and (max-width: $l-device - 1) {
             @content;
         }
     }
+    @else if $size == m {
+        @media screen and (min-width: $m-device) and (max-width: $g-device - 1) {
+            @content;
+        }
+    }
+    @else if $size == s {
+        @media screen and (max-width: $m-device - 1) {
+            @content;
+        }
+    }    
 }
+
+
+/*Testando os breakPoints*/
+p{
+    @include device(l){ color: blue; }
+    @include device(g){ color: yellow; }
+    @include device(m){ color: green;}
+    @include device(s){ color: red}
+}
+
+
 
 /*FUNÇÕES de GRID*/
-
-@function grid($col, $offset: false){
-    $width: $col / $cols * 100 "%";
-    $result: calc(#{$width} - #{$gutter});
+@function grid ($col, $offset: false){
+    /*GRID*/
+    $width: $col / $cols * 100 + "%";
+    $result: calc (#{$width} - #{$gutter});
+    @if $offset == offset {  
+    /*OFFSET*/      
+        $result: calc (#{$width} - ($gutter / 2));
+    }
+    @return $result;
 }
 
+/*Gerador de Classes GRID*/
+@for $index from 1 through $cols {
+    .grid-#{$index}{
+        width: grid($index);
+    }
+}
+
+/*MIXIN da ESTRUTURA do GRID*/
+@mixin grid-structure {
+    float: left;
+    min-height: 1px;
+    margin: 0 ($gutter / 2);
+    @include device(s){
+        width: 100%;
+        float: none;
+    }
+}
+
+[class^="grid-"]{
+    @include grid-structure();
+}
+
+/*GERADOR de grid-OFFSET */
+@for $index from 1 through $cols {
+    .offset-#{$index}{
+        margin-left: grid($index, offset);
+    }
+}
