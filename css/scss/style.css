@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*Variaveis Principais do Grid.scss*/
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*MIXIN de BreakPoints*/
+/*FUNÇÕES de GRID*/

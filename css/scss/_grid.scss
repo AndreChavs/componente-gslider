@@ -1,0 +1,41 @@
+/*Variaveis Principais do Grid.scss*/
+$gutter: 20px;
+$colunas: 12;
+$l-device:1200px;
+$m-device:768px;
+$s-device:480px;
+
+
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+/*MIXIN de BreakPoints*/
+@mixin responsive($size) {
+    @if $size == l {        
+        @media screen and (min-width: $l-device){ 
+            @content;
+        }
+    }   
+    @else if $size == m {   
+        @media screen and (min-width: $m-device) and (max-width: $l-device - 1){
+            @content;
+        }
+    }
+    @else if $size == s {   
+        @media screen and (max-width: $m-device - 1){
+            @content;
+        }
+    }
+}
+
+/*FUNÇÕES de GRID*/
+
+@function grid($col, $offset: false){
+    $width: $col / $cols * 100 "%";
+    $result: calc(#{$width} - #{$gutter});
+}
+
