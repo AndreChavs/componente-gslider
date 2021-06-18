@@ -7,7 +7,10 @@ $g-device: 960px;
 $m-device:768px;
 $s-device:480px;
 
-
+body{
+    margin: 0;
+    padding: 0;
+}
 
 *, *:before, *:after {
     -webkit-box-sizing: border-box; 
@@ -47,6 +50,12 @@ p{
     @include device(m){ color: green;}
     @include device(s){ color: red}
 }
+div{
+    div{
+    background-color: #222;
+    }
+}
+
 
 
 
@@ -54,10 +63,11 @@ p{
 @function grid ($col, $offset: false){
     /*GRID*/
     $width: $col / $cols * 100 + "%";
-    $result: calc (#{$width} - #{$gutter});
+    $result: calc(#{$width} - #{$gutter});
     @if $offset == offset {  
-    /*OFFSET*/      
-        $result: calc (#{$width} - ($gutter / 2));
+    /*OFFSET*/ 
+        $gutter: $gutter / 2;
+        $result: calc(#{$width} - #{$gutter});
     }
     @return $result;
 }
@@ -84,9 +94,49 @@ p{
     @include grid-structure();
 }
 
-/*GERADOR de grid-OFFSET */
+/*GERADOR de classes OFFSET */
 @for $index from 1 through $cols {
     .offset-#{$index}{
         margin-left: grid($index, offset);
+        @extend %offset;
     }
 }
+
+@include device(s){
+    %offset {
+        margin-left: 0px;
+    }
+}
+
+/*MIXIN CLEARFIX*/
+@mixin clearfix {
+    &::after, &::before{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+/*MIXIN CONTAINER*/
+@mixin container {
+    max-width: $l-device;
+    margin: 0 auto;
+    position: relative;
+    @include device(g){
+        max-width: $g-device;
+    }
+    @include device(m){
+        max-width: $m-device;
+    }
+    @include device(s){
+        max-width: $s-device;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    @include clearfix()
+}
+
+.container {
+    @include container();
+}
+
