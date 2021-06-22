@@ -53,7 +53,7 @@ body{
     @if $offset == offset {  
     /*OFFSET*/ 
         $gutter: $gutter / 2;
-        $result: calc(#{$width} - #{$gutter});
+        $result: calc(#{$width} + #{$gutter});
     }
     @return $result;
 }
@@ -85,19 +85,13 @@ body{
 /*GERADOR de classes OFFSET */
 @for $index from 1 through $cols { /*para index de 1 até 12 : faça*/
     .offset-#{$index}{  /*seletor offset-index*/
-        width: grid($index, offset);  /*grid(n, string)*/
+        margin-left: grid($index, offset);  /*grid(n, string)*/
         @extend %offset;
     }
 }
-/*Seletor que seleciona todos as classes que iniciam "offset-"*/
-[class^="offset-"]{
-    background-color: transparent;    
-    margin-left: $gutter / 2;    
-}
-
 @include device(s){
     %offset {
-        margin-left: 0px;
+        margin-left: 10px;
     }
 }
 
@@ -128,9 +122,7 @@ body{
     }
     /*Container para Mobile*/
     @include device(s){
-        max-width: $s-device;        
-        display: flex;
-        flex-wrap: wrap;
+        max-width: $s-device;
     }
     /*@include clearfix()*/
 }
@@ -144,10 +136,10 @@ body{
     display: flex;
     flex-wrap: nowrap;
     position: relative;
-    margin-left: -$gutter/2;
-    margin-right: -$gutter/2;
-    [class^="grid-"]{
-        margin-bottom: 0;
+    margin-left: -$gutter / 2; 
+    margin-right: -$gutter / 2;   
+    [class^="grid-"]{               
+        margin-bottom: 0px;
     }
     /*@include device(s){}*/
     /*@include clearfix()*/
@@ -157,23 +149,11 @@ body{
 }
 
 
-/*<<<<<<<<<<<<<<<<<<<<ÁREA DE TESTE>>>>>>>>>>>>>>>>>><*/
-/*Testando os breakPoints*/
-p{
-    @include device(l){ color: blue; }
-    @include device(g){ color: yellow; }
-    @include device(m){ color: green;}
-    @include device(s){ color: red}
-    margin-block-start: 0;
-    margin-block-end: 0;
+
+/*TESTANDO GRIDSYSTEM*/
+.container{
+    background-color: rgba(0,0,0,.2);
 }
-
-/*Testando os breakPoints*/
-
-/*Teste div container*/
-div{
-    background: rgba(0,0,0,.4);    
+[class^="grid-"]{
+    background-color: rgba(0,0,0,.4);
 }
-
-/*Teste div container*/
-

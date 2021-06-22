@@ -88,97 +88,91 @@ body {
 /*para index de 1 até 12 : faça*/
 .offset-1 {
   /*seletor offset-index*/
-  width: calc(8.33333% - 10px);
+  margin-left: calc(8.33333% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-2 {
   /*seletor offset-index*/
-  width: calc(16.66667% - 10px);
+  margin-left: calc(16.66667% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-3 {
   /*seletor offset-index*/
-  width: calc(25% - 10px);
+  margin-left: calc(25% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-4 {
   /*seletor offset-index*/
-  width: calc(33.33333% - 10px);
+  margin-left: calc(33.33333% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-5 {
   /*seletor offset-index*/
-  width: calc(41.66667% - 10px);
+  margin-left: calc(41.66667% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-6 {
   /*seletor offset-index*/
-  width: calc(50% - 10px);
+  margin-left: calc(50% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-7 {
   /*seletor offset-index*/
-  width: calc(58.33333% - 10px);
+  margin-left: calc(58.33333% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-8 {
   /*seletor offset-index*/
-  width: calc(66.66667% - 10px);
+  margin-left: calc(66.66667% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-9 {
   /*seletor offset-index*/
-  width: calc(75% - 10px);
+  margin-left: calc(75% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-10 {
   /*seletor offset-index*/
-  width: calc(83.33333% - 10px);
+  margin-left: calc(83.33333% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-11 {
   /*seletor offset-index*/
-  width: calc(91.66667% - 10px);
+  margin-left: calc(91.66667% + 10px);
   /*grid(n, string)*/
 }
 
 /*para index de 1 até 12 : faça*/
 .offset-12 {
   /*seletor offset-index*/
-  width: calc(100% - 10px);
+  margin-left: calc(100% + 10px);
   /*grid(n, string)*/
-}
-
-/*Seletor que seleciona todos as classes que iniciam "offset-"*/
-[class^="offset-"] {
-  background-color: transparent;
-  margin-left: 10px;
 }
 
 /*@include device($)*/
 @media screen and (max-width: 767px) {
   .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6, .offset-7, .offset-8, .offset-9, .offset-10, .offset-11, .offset-12 {
-    margin-left: 0px;
+    margin-left: 10px;
   }
 }
 
@@ -225,11 +219,6 @@ body {
 @media screen and (max-width: 767px) {
   .container {
     max-width: 480px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
 }
 
@@ -248,53 +237,18 @@ body {
 }
 
 .row [class^="grid-"] {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
-/*<<<<<<<<<<<<<<<<<<<<ÁREA DE TESTE>>>>>>>>>>>>>>>>>><*/
-/*Testando os breakPoints*/
-p {
-  /*@include device($)*/
-  /*@include device($)*/
-  /*@include device($)*/
-  /*@include device($)*/
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+/*TESTANDO GRIDSYSTEM*/
+.container {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (min-width: 1200px) {
-  p {
-    color: blue;
-  }
+[class^="grid-"] {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-@media screen and (min-width: 960px) and (max-width: 1199px) {
-  p {
-    color: yellow;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 959px) {
-  p {
-    color: green;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  p {
-    color: red;
-  }
-}
-
-/*Testando os breakPoints*/
-/*Teste div container*/
-div {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/*Teste div container*/
 .div {
   font-family: 'Aref Ruqaa', serif;
   font-family: 'PT Mono', monospace;
