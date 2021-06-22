@@ -14,47 +14,119 @@
     <link rel="stylesheet" href="css/scss/style.css">
 </head>
 <body>
-    <!--
-        <main class="container intro">
-            <div class="grid-5">
-                <img class="logo" src="img/lescone.png" alt="Le Scone">
-                <div class="intro-info">
-                    <p>De Seg. à Sab. <span class="aberto"></span> <br> das 07:00h às 18:00h</p>
-                    <p>Praia de Botafogo, 300 <br> Rio de Janeiro - RJ</p>
-                </div>
-                <p class="intro-tel">+55 (021) 92412-3333</p>
+   
+    <main class="container intro">
+        <div class="grid-5">
+            <img class="logo" src="img/lescone.png" alt="Le Scone">
+            <div class="intro-info">
+                <p>De Seg. à Sab. <span class="aberto"></span> <br> das 07:00h às 18:00h</p>
+                <p>Praia de Botafogo, 300 <br> Rio de Janeiro - RJ</p>
             </div>
-            <div class="grid-7">
-                <img src="img/foto.png" alt="Homem Cozinhando">
-            </div>
-        </main>
-    -->
-    <div class="container">
-        <div class="grid-5">test 1</div>
-        <div class="grid-7">test 2</div>
-        <div class="grid-4"> teste 5 </div>
-        <div class="grid-3"> Teste 6</div>
-        <div class="grid-9">
-            <div class="row">
-                <div class="grid-4">Teste 7</div>
-                <div class="grid-4">Teste 8</div>
-                <div class="grid-4">Teste 9</div>
-            </div>
+            <p class="intro-tel">+55 (021) 92412-3333</p>
         </div>
-        <div class="grid-3">Teste 10</div>
-        <div class="grid-3">Teste 12</div>
-    </div>
-
-    <div class="container">
         <div class="grid-7">
-            <div class="row">                
-                <div class="grid-6 offset-6">Teste</div>
+            <img src="img/foto.png" alt="Homem Cozinhando">
+        </div>
+    </main>
+
+    <section class="container menu">
+        <h1 class="grid-4 title">MENU</h1>
+        <div class="grid-7 offset-1">
+            <div class="menu-item">
+                <img src="img/prato-1.png" alt="pratos de Entrada">
+                <h2>Entradas</h2>
+                <ul>
+                    <li><span>R$1,70</span>Ovos Mexidos</li>
+                    <li><span>R$3,70</span>Scones de Frutas</li>
+                    <li><span>R$4,70</span>Joelho de Queijo</li>
+                    <li><span>R$2,70</span>Presunto Cozido</li>
+                    <li><span>R$3,70</span>Coxinha de Frango</li>
+                </ul>
+            </div>
+            <div class="menu-item">
+                <img src="img/prato-2.png" alt="pratos Principais">
+                <h2>Pratos Principais</h2>
+                <ul>
+                    <li><span>R$9,70</span>Penne com Queijo</li>
+                    <li><span>R$25,70</span>Feijoada</li>
+                    <li><span>R$44,70</span>Costela ao Molho</li>
+                    <li><span>R$26,70</span>Medalhão de Filé</li>
+                    <li><span>R$35,70</span>Costela Suína a pururuca</li>
+                </ul>
             </div>
         </div>
-        <div class="grid-5">teste 14</div>
-        <div class="grid-6 offset-1">teste 15</div>
-        <div class="grid-5">teste 16</div>
-        
-    </div>
+    </section>
+
+    <section class="container contato">
+        <h1 class="grid-4 title">Contato</h1>
+        <div class="grid-7 offset-1">
+            <form action="">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome">
+                <div class="row">
+                    <div class="grid-7">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="grid-5">
+                        <label for="tel">Telefone</label>
+                        <input type="number" name="tel" id="tel">
+                    </div>
+                </div>
+                <label for="msg">Mensagem</label>
+                <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+                <input type="button" value="Enviar" class="btn">
+            </form>
+            <div class="contato-info">
+                <p>contato@lescone.com ////</p>
+                <p>+55 021 2412-3333 ////</p>
+            </div>
+            <a href="#" class="contato-mapa">
+                <img src="img/map.png" alt="Como chegar em leScone">
+            </a>
+        </div>
+    </section>
+
+    <footer class="container">
+        <p>Le Scone &copy; 1989 - 2016. Alguns Direitos Reservados</p>
+        <a href="#"><img src="img/lescone-icone.png" alt="Le Scone Icon"></a>
+    </footer>
+
+
+
+
+   
+
+    
 </body>
 </html>
+
+
+<!--
+        <div class="container">
+            <div class="grid-5">test 1</div>
+            <div class="grid-7">test 2</div>
+            <div class="grid-4"> teste 5 </div>
+            <div class="grid-3"> Teste 6</div>
+            <div class="grid-9">
+                <div class="row">
+                    <div class="grid-4">Teste 7</div>
+                    <div class="grid-4">Teste 8</div>
+                    <div class="grid-4">Teste 9</div>
+                </div>
+            </div>
+            <div class="grid-3">Teste 10</div>
+            <div class="grid-3">Teste 12</div>
+        </div>
+    
+        <div class="container">
+            <div class="grid-7">
+                <div class="row">                
+                    <div class="grid-6 offset-6">Teste</div>
+                </div>
+            </div>
+            <div class="grid-5">teste 14</div>
+            <div class="grid-6 offset-1">teste 15</div>
+            <div class="grid-5">teste 16</div>
+        </div>
+    -->

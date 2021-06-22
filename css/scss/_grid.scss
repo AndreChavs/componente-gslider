@@ -147,13 +147,3 @@ body{
 .row{
     @include row()
 }
-
-
-
-/*TESTANDO GRIDSYSTEM*/
-.container{
-    background-color: rgba(0,0,0,.2);
-}
-[class^="grid-"]{
-    background-color: rgba(0,0,0,.4);
-}

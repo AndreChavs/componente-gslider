@@ -240,15 +240,6 @@ body {
   margin-bottom: 0px;
 }
 
-/*TESTANDO GRIDSYSTEM*/
-.container {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-[class^="grid-"] {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .div {
   font-family: 'Aref Ruqaa', serif;
   font-family: 'PT Mono', monospace;
