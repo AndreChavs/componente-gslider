@@ -240,7 +240,8 @@ body {
   margin-bottom: 0px;
 }
 
-.div {
-  font-family: 'Aref Ruqaa', serif;
-  font-family: 'PT Mono', monospace;
+body {
+  background-color: #edece4;
+  border: 10px solid #cbc6b9;
+  color: #2a2426;
 }
