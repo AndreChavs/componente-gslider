@@ -16,7 +16,7 @@ $font-2:'PT Mono', monospace;
     font-family: $font-1;
     @if $size == 18 {
         font-size: em(18);
-        line-height: em(30, 18);
+        line-height: em(30, 18);        
     }
 }
 
