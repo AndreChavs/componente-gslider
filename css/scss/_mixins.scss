@@ -3,6 +3,7 @@ $bege-claro: #edece4;
 $bege-medio:#cbc6b9;
 $bege-escuro:#988c77;
 $cinza:#2a2426;
+$verde:#1ab912;
 
 //fontes tipográficas
 $font-1:'Aref Ruqaa', serif;
@@ -33,5 +34,7 @@ $font-2:'PT Mono', monospace;
 }
 
 
-   
 
+@mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+}
