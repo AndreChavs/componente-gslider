@@ -520,7 +520,6 @@ input.btn:hover {
 }
 
 .contato-info {
-  display: inline-block;
   color: #988c77;
   float: right;
   text-align: right;
@@ -537,4 +536,32 @@ input.btn:hover {
 
 .contato-mapa img {
   width: 100%;
+}
+
+footer {
+  padding: 20px 0;
+  background: #2a2426;
+  -webkit-box-shadow: 0 0 0 10px #2a2426;
+          box-shadow: 0 0 0 10px #2a2426;
+}
+
+footer .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer p {
+  color: #edece4;
+  /*@include device($)*/
+}
+
+@media screen and (max-width: 767px) {
+  footer p {
+    text-align: center;
+  }
+}
+
+footer a {
+  display: block;
 }
